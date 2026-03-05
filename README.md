@@ -1,77 +1,65 @@
 # Real-Time Character Counter
 
-This project is a simple web application that allows users to type a message into a text area while displaying a real-time character counter. The counter updates dynamically as the user types and ensures that the user does not exceed the maximum allowed character limit.
+This repository contains a simple web project that implements a **real-time character counter** for a text area.  
+The counter updates as the user types and displays how many characters have been typed and how many remain.
+
+Repository: https://github.com/praveen-analyze/character-counter.git
 
 ---
 
 ## Project Description
 
-The application includes a text area where users can enter a message. A character counter displays:
+This is a minimal and interactive frontend project built using **HTML, CSS, and JavaScript**.
 
-- The number of characters typed
-- The maximum allowed characters
-- The remaining characters
+The application allows a user to:
 
-If the user exceeds the character limit, further typing is prevented and a warning message is displayed.
+- Type a message into a text area
+- View the number of characters typed
+- See how many characters remain out of the maximum allowed
+- Receive a warning when the character limit is reached
 
 ---
 
 ## Features
 
-- Text area with a defined maximum character limit (e.g., 200 characters)
-- Real-time character counting
-- Displays typed characters and remaining characters (e.g., 150/200 characters)
+- Text area with defined maximum character limit (200 characters)
+- Real-time updating character counter
+- Display of typed and remaining characters
+- Warning message when the limit is reached
+- Basic styling for clarity and usability
 - Prevents typing beyond the maximum limit
-- Shows a warning message when the limit is reached
-- Simple and responsive user interface
+
+---
+
+## How It Works
+
+1. The text area listens for the `input` event.
+2. Whenever the user types, JavaScript captures the current text length.
+3. The counter is updated in real time:
+   - `X/200 characters`
+4. If the character limit is reached, a warning message is shown.
+5. The built-in `maxlength` attribute prevents further typing after the limit.
 
 ---
 
 ## Technologies Used
 
 - HTML5
-- CSS3 (Optional styling)
-- JavaScript (Vanilla JS)
+- CSS3
+- JavaScript (Vanilla)
 
 ---
 
-## Functional Requirements
+## Validation Details
 
-### 1. Text Area Setup
-- An HTML `<textarea>` element is created.
-- The maximum character limit is displayed (e.g., "200 characters max").
-
-### 2. Real-Time Character Tracking
-- An `input` event listener is attached to the text area.
-- Every time the user types, the current character count is calculated.
-- The counter updates dynamically.
-
-### 3. Character Display Format
-The counter shows:
-
-### 4. Character Limit Enforcement
-- If the user reaches the maximum character limit:
-  - Further typing is prevented.
-  - A warning message is displayed.
-- The user cannot enter more than the allowed characters.
+- Maximum characters: 200  
+- Characters typed and characters remaining are shown simultaneously
+- Warns the user when the limit has been reached
 
 ---
 
-## How It Works
-
-1. The `textarea` listens for the `input` event.
-2. JavaScript calculates:
-   - `currentLength = textarea.value.length`
-   - `remaining = maxLimit - currentLength`
-3. The counter text updates in real time.
-4. If `currentLength` exceeds the limit:
-   - Input is restricted.
-   - A warning message appears.
-
----
-
-## How to Run the Project
+## How to Run
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repository-name.git
+   git clone https://github.com/praveen-analyze/character-counter.git
