@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            width: 400px;
+            height: 120px;
+            resize: none;
+        }
+        .counter {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .warning {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+           <link href="
+https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+" rel="stylesheet"> 
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100">
+
+<div class="bg-white shadow-2xl rounded-xl p-8 w-full max-w-lg text-center">
+
+<h2 class="text-3xl font-bold p-5 text-blue-600">Message Box</h2>
+<p class="text-xl mb-3">200 characters max</p>
+<!--text area-->
+<textarea id="message" maxlength="200"
+placeholder="Enter Your Message"
+class="w-full p-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none">
+</textarea>
+
+<div id="counter" class="counter text-lg mt-2">0/200 characters</div>
+<div id="warning" class="warning mt-2"></div>
+
+</div>
+</body>
+
+<script>
+var textarea = document.getElementById("message")
+var counter = document.getElementById("counter")
+var warning = document.getElementById("warning")
+
+var maxLength = 200
+
+textarea.addEventListener("input", function () {
+
+    var currentLength = textarea.value.length
+    var remaining = maxLength - currentLength
+
+    
+    counter.textContent = currentLength + "/" + maxLength + " characters (" + remaining + " remaining)"
+
+   
+    if (currentLength >= maxLength) {
+        warning.textContent = "Character limit reached!"
+    } else {
+        warning.textContent = ""
+    }
+
+    if (currentLength > maxLength) {
+        textarea.value = textarea.value.substring(0, maxLength)
+    }
+})
+</script>
+
+</body>
+</html>
